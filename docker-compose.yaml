@@ -1,0 +1,20 @@
+version: "3"
+
+services: 
+  mongo-dev:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+  # mysql-dev:
+  #   image: mysql:8.0.15
+  #   environment: 
+  #     MYSQL_ROOT_PASSWORD: ewqewq
+  #     MYSQL_DATABASE: ts-test
+  #   ports: 
+  #     - "3308:3306"
+
+  # client:
+  #   image: mysql:8.0.15
+  #   depends_on:
+  #     - mysql-dev
+  #   command: mysql --uroot -ppassword mysql-dev blogapp

@@ -1,0 +1,37 @@
+{
+  "dependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/cors": "^2.8.4",
+    "@types/express": "^4.16.1",
+    "@types/mongoose": "^5.3.26",
+    "@types/react": "^16.8.13",
+    "@types/react-dom": "^16.8.4",
+    "@zeit/next-less": "^1.0.1",
+    "@zeit/next-typescript": "^1.1.1",
+    "antd": "^3.16.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "less": "^3.9.0",
+    "mongoose": "^5.5.1",
+    "mysql": "^2.16.0",
+    "next": "^8.0.4",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "typeorm": "^0.2.16",
+    "typescript": "^3.4.3"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "tsc": "tsc",
+    "dev:server": "ts-node-dev --inspect -- server/index.ts",
+    "prod:server": "tsc && node ./dist/index.js",
+    "dev:ssr": "ts-node-dev --inspect -- src/ssr/server.ts"
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.3.3",
+    "babel-plugin-import": "^1.11.0",
+    "ts-node-dev": "^1.0.0-pre.32"
+  }
+}
