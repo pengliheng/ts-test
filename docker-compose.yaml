@@ -2,6 +2,7 @@ version: "3"
 
 services:
   client:
+    container_name: client
     image: node:latest
     volumes:
       - .:/root/client
@@ -15,6 +16,7 @@ services:
              yarn dev"
 
   service:
+    container_name: service
     image: node:latest
     working_dir: /root/server
     volumes:
@@ -36,7 +38,7 @@ services:
       - "27017:27017"
 
 
-      
+
   # mysql-dev:
   #   image: mysql:8.0.15
   #   environment:
