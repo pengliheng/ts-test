@@ -1,13 +1,20 @@
 import * as express from "express";
-require("dotenv").config();
 import * as cors from "cors";
-
 import connect from "./connect";
-import user from "./user/router";
+import user from "./table/router";
 import config from "../config/index";
 const PORT = process.env.NODE_PORT || 3000;
 const app = express();
+require("dotenv").config();
 app.use(cors());
+
+// if (process.env.NODE_NEV === "DEVELOPMENT") {
+//   app.use((__: any, _: any, next: any) => {
+//     setTimeout(() => {
+//       next();
+//     }, 300);
+//   });
+// }
 
 user(app);
 app.use("*", async (_: any, res: any) => {

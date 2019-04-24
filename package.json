@@ -21,7 +21,7 @@
     "typescript": "^3.4.3"
   },
   "scripts": {
-    "dev": "next",
+    "dev": "next -- -p 8080",
     "build": "next build",
     "start": "next start",
     "tsc": "tsc",
@@ -33,5 +33,6 @@
     "@babel/preset-typescript": "^7.3.3",
     "babel-plugin-import": "^1.11.0",
     "ts-node-dev": "^1.0.0-pre.32"
-  }
+  },
+  "license": "MIT"
 }
