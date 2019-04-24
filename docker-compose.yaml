@@ -13,7 +13,8 @@ services:
       - "1234:8080"
     command: >
       sh -c "npm install yarn -g &&
-             yarn dev"
+            yarn &&
+            yarn dev"
 
   service:
     container_name: service
@@ -27,7 +28,8 @@ services:
       - "3000:3000"
     command: >
       sh -c "npm install yarn ts-node-dev -g &&
-             yarn dev:server"
+            yarn &&
+            yarn dev:server"
 
   mongo-dev:
     container_name: mongodb
