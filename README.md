@@ -16,10 +16,12 @@ chmod +x to/your/file/path
 
 ## docker
 
+full stack build by docker
 交付标的从**编译后的二进制代码**变成了**可运行在任何环境的程序**
 
 ## how to run
 
 ```bash
-docker-compose up
+docker-compose up \
+open http://localhost:1234
 ```

@@ -10,7 +10,7 @@ services:
       - .env
     working_dir: /root/client
     ports:
-      - "8080:8080"
+      - "1234:8080"
     command: >
       sh -c "npm install yarn -g &&
              yarn dev"
@@ -34,8 +34,8 @@ services:
     image: mongo:latest
     volumes:
       - ./data:/data/db
-    ports:
-      - "27017:27017"
+    # ports:
+    #   - "27017:27017"
 
 
 
