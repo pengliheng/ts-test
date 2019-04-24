@@ -2,10 +2,12 @@ import * as express from "express";
 import * as cors from "cors";
 import connect from "./connect";
 import user from "./table/router";
-import config from "../config/index";
-const PORT = process.env.NODE_PORT || 3000;
+// import config from "../config/index";
+const NODE_PORT = process.env.NODE_PORT || "3000";
+const MONGO_PORT = process.env.MONGO_URI || "mongodb://mongodb:27017/local";
 const app = express();
-require("dotenv").config();
+
+// require("dotenv").config();
 app.use(cors());
 
 // if (process.env.NODE_NEV === "DEVELOPMENT") {
@@ -21,7 +23,7 @@ app.use("*", async (_: any, res: any) => {
   res.send("404");
 });
 
-app.listen(PORT, () => {
-  console.log(`success listen ${PORT}`);
-  connect({ db: config.db });
+app.listen(NODE_PORT, () => {
+  console.log(`success listen ${NODE_PORT}`);
+  connect({ db: MONGO_PORT });
 });

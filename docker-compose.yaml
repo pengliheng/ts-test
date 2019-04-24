@@ -1,25 +1,49 @@
 version: "3"
 
-services: 
+services:
+  client:
+    image: node:latest
+    volumes:
+      - .:/root/client
+    env_file:
+      - .env
+    working_dir: /root/client
+    ports:
+      - "8080:8080"
+    command: >
+      sh -c "npm install yarn -g &&
+             yarn dev"
+
+  service:
+    image: node:latest
+    working_dir: /root/server
+    volumes:
+      - .:/root/server
+    env_file:
+      - .env
+    ports:
+      - "3000:3000"
+    command: >
+      sh -c "npm install yarn ts-node-dev -g &&
+             yarn dev:server"
+
   mongo-dev:
-    container_name: mongo
+    container_name: mongodb
     image: mongo:latest
     volumes:
       - ./data:/data/db
     ports:
       - "27017:27017"
-  service:
-    image: ts:latest
-    ports: 
-      - "3000:3000"
+
+
+      
   # mysql-dev:
   #   image: mysql:8.0.15
-  #   environment: 
+  #   environment:
   #     MYSQL_ROOT_PASSWORD: ewqewq
   #     MYSQL_DATABASE: ts-test
-  #   ports: 
+  #   ports:
   #     - "3308:3306"
-
   # client:
   #   image: mysql:8.0.15
   #   depends_on:

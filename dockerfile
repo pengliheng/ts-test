@@ -1,13 +1,13 @@
 FROM node
 
-COPY . /root/server
+COPY . /root/front-end
 
-WORKDIR /root/server
+WORKDIR /root/front-end
 
-EXPOSE 3000
+EXPOSE 8080
 
-RUN npm install yarn ts-node-dev -g
+RUN npm install yarn -g
 
 # RUN yarn
 
-CMD [ "yarn" ,"dev:server" ]
+CMD [ "yarn" ,"dev" ]

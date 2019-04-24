@@ -6,10 +6,10 @@ import { Schema, model } from "mongoose";
 //   lastName: string;
 // }
 
-const UserSchema: Schema = new Schema({
-  // email: { type: String, default: "" },
-  // firstName: { type: String, default: "" },
-  // lastName: { type: String, default: "" }
+const UserSchema: any = new Schema({
+  email: { type: String, default: "" },
+  firstName: { type: String, default: "" },
+  lastName: { type: String, default: "" }
 });
 
 // Export the model and return your IUser interface

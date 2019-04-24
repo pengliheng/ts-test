@@ -16,6 +16,7 @@ export default function({ db }: TInput): any {
         return console.info(`Successfully connected to ${db}`);
       })
       .catch(error => {
+        console.log(`url wrong ${db}`);
         console.error("Error connecting to database: ", error);
         return process.exit(1);
       });
